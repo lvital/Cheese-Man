@@ -45,7 +45,7 @@ public class CheeseManController : MonoBehaviour {
     {
        if(isGrounded == true)
         {
-            extraJump = 2;
+            extraJump = 1;
         }
 
        if(Input.GetKeyDown(KeyCode.UpArrow) && extraJump > 0)
