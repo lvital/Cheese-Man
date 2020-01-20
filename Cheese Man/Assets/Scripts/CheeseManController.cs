@@ -8,6 +8,9 @@ public class CheeseManController : MonoBehaviour {
     public float jumpForce = 5;
     public float moveInput;
 
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
     private Rigidbody2D rb;
 
     private bool facingRight = true;
