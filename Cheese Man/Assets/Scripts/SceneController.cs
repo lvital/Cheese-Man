@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
     public float waitSeconds;
     public Vector3 screenBounds;
     public FloorController floorPrefab;
+    public Vector2 floorLenght = new Vector2(1, 10);
 
     private Coroutine floorCoroutine;
 
@@ -14,7 +15,10 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         screenBounds = GetScreenBounds();
-        floorCoroutine = StartCoroutine(ToddMcFarlaner());
+
+        float spriteSize = transform.localScale.x;
+
+        floorCoroutine = StartCoroutine(ToddMcFarlaner(spriteSize));
     }
 
     // Update is called once per frame
@@ -31,17 +35,22 @@ public class SceneController : MonoBehaviour
         return mainCamera.ScreenToWorldPoint(screenVector);
     }
 
-    private IEnumerator ToddMcFarlaner()
+    private IEnumerator ToddMcFarlaner(float spriteSize)
     {
         WaitForSeconds wait = new WaitForSeconds(waitSeconds);
 
         while (true)
         {
+            float randomLength = Random.Range(floorLenght.x, floorLenght.y);
             float verticalRandomPosition = UnityEngine.Random.Range(-screenBounds.y, screenBounds.y);
-            Vector2 AlSimmonsLocation = new Vector2(screenBounds.x, verticalRandomPosition);
 
-            Instantiate(floorPrefab, AlSimmonsLocation, Quaternion.identity);
+            for (int i = 0; i < randomLength; i++)
+            {
+                
+                Vector2 AlSimmonsLocation = new Vector2(screenBounds.x + (spriteSize * i), verticalRandomPosition);
 
+                Instantiate(floorPrefab, AlSimmonsLocation, Quaternion.identity);
+            }
             yield return wait;
         }
     }
