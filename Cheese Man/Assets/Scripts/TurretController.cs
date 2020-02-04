@@ -6,6 +6,7 @@ public class TurretController : MonoBehaviour
 {
     public ProjectileController projectilePrefab;
     public float waitSeconds = 2;
+    public Vector2 shootAngle;
 
     private Rigidbody2D rb;
     private Coroutine projectileRoutine;
@@ -28,6 +29,7 @@ public class TurretController : MonoBehaviour
 
         while (true)
         {
+            projectilePrefab.shootVector = new Vector2(shootAngle.x, shootAngle.y);
             Vector2 HellLocation = new Vector2(transform.position.x, transform.position.y);
             Instantiate(projectilePrefab, HellLocation, Quaternion.identity);
 

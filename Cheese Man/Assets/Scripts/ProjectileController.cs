@@ -5,7 +5,8 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     public float speed = 3;
-    public Vector3 shootVector = new Vector3();
+
+    public Vector2 shootVector;
 
     // Use this for initialization
     void Start()
@@ -16,6 +17,6 @@ public class ProjectileController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * Time.deltaTime * speed, Space.World);
+        transform.Translate(shootVector * Time.deltaTime * speed, Space.World);
     }
 }
