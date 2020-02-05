@@ -7,7 +7,10 @@ public class SceneController : MonoBehaviour
     public float waitSeconds;
     public Vector3 screenBounds;
     public FloorController floorPrefab;
-    
+    public TurretController turretPrefab;
+    public bool fireFromEveryone = false;
+    public Vector2 shootAngle;
+
     public Vector2 floorLenght = new Vector2(1, 10);
 
     private Coroutine floorCoroutine;
@@ -25,7 +28,15 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !turretPrefab.fireSameDirection)
+        {
+            turretPrefab.fireSameDirection = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1) && turretPrefab.fireSameDirection)
+        {
+            turretPrefab.fireSameDirection = false;
+        }
+
     }
 
     private Vector3 GetScreenBounds()
