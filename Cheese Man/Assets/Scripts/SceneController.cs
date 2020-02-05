@@ -8,7 +8,8 @@ public class SceneController : MonoBehaviour
     public Vector3 screenBounds;
     public FloorController floorPrefab;
     public TurretController turretPrefab;
-    public bool fireFromEveryone = false;
+    public bool fireSameDirection = false;
+    public bool fireIndividualDirection = false;
     public Vector2 shootAngle;
 
     public Vector2 floorLenght = new Vector2(1, 10);
@@ -28,15 +29,27 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !turretPrefab.fireSameDirection)
+        if (Input.GetKeyDown(KeyCode.Q) && !fireSameDirection)
         {
-            turretPrefab.fireSameDirection = true;
+            fireSameDirection = true;
+            Debug.Log("pressed q: fireSameDirection true");
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1) && turretPrefab.fireSameDirection)
+        else if (Input.GetKeyDown(KeyCode.Q) && fireSameDirection)
         {
-            turretPrefab.fireSameDirection = false;
+            fireSameDirection = false;
+            Debug.Log("pressed q: fireSameDirection false");
         }
 
+        if (Input.GetKeyDown(KeyCode.W) && !fireIndividualDirection)
+        {
+            fireIndividualDirection = true;
+            Debug.Log("pressed w: fireIndividualDirection true");
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && fireIndividualDirection)
+        {
+            fireIndividualDirection = false;
+            Debug.Log("pressed w: fireIndividualDirection false");
+        }
     }
 
     private Vector3 GetScreenBounds()

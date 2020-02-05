@@ -6,8 +6,8 @@ public class TurretController : MonoBehaviour
 {
     public ProjectileController projectilePrefab;
     public float waitSeconds = 2;
- 
-    public bool fireSameDirection = false;
+
+    
 
     private Rigidbody2D rb;
     private Coroutine projectileRoutine;
@@ -23,9 +23,13 @@ public class TurretController : MonoBehaviour
     void Update()
     {
         shootAngle = new Vector2(FindObjectOfType<SceneController>().shootAngle.x, FindObjectOfType<SceneController>().shootAngle.y);
-        if (fireSameDirection)
+        if (FindObjectOfType<SceneController>().fireSameDirection && !FindObjectOfType<SceneController>().fireIndividualDirection)
         {
             projectilePrefab.shootVector = new Vector2(shootAngle.x, shootAngle.y);
+        }
+        else if (!FindObjectOfType<SceneController>().fireSameDirection && FindObjectOfType<SceneController>().fireIndividualDirection)
+        {
+            projectilePrefab.shootVector = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
         }
     }
 
