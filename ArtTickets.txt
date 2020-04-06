@@ -1,0 +1,41 @@
+Art-###: 
+Points:
+Status: Not Started
+Assigned:
+Description: 
+Comments:
+
+Art-1: Cheeseman horizontal movement
+Points:
+Status: Not Started
+Assigned:
+Description: Cheeseman needs sprites for when he moves left or right
+Comments:
+
+Art-2: Cheeseman jumping 
+Points:
+Status: Not Started
+Assigned:
+Description: Cheeseman needs sprites for whrn he jumps
+Comments:
+
+Art-3: Turrets
+Points:
+Status: Not Started
+Assigned: 
+Description: Turret enemies need sprites.  Turrets do not move.
+Comments:
+
+Art-4: Projectiles
+Points: 
+Status: Not Started
+Assigned:
+Description: Need Generic projectile sprites for common enemies
+Comments:
+
+Art-5: Backgrounds
+Points: 1
+Status: Not Started
+Assigned: All Team Members
+Description: Brainstrom possible background designs for levels.  This will naturally lead to discussions about the game's overall story.
+Comments: 

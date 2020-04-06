@@ -1,0 +1,32 @@
+Cheeseman-###: 
+Points:
+Status: Not Started
+Assigned:
+Description: 
+Comments:
+
+Cheeseman-1: Score implementation
+Points: 3
+Status: In Progress
+Assigned: Jesus
+Description: Cheeseman needs a way to get points whenever he preforms an action and while he is in game.
+As a Player,
+Given I have a Cheeseman
+When Cheeseman does X
+Then Cheeseman gains X points
+As a Player,
+Given I have a Cheeseman
+When Cheeseman in playing
+Then Cheeseman gains X points 
+Comments:
+
+Cheeseman-2: Health tracker
+Points:
+Status: Not Started
+Assigned: 
+Description: Cheeseman needs to be able to track his health
+As a Player,
+Given I have a Cheeseman
+When Cheeseman takes X damage
+Then X Damage is removed from Cheeseman's health
+Comments:
